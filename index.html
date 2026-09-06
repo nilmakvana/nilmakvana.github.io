@@ -1,0 +1,973 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nil Makvana — Software Engineer | Distributed Systems, Backend &amp; ML</title>
+
+<meta name="description" content="I'm Nil Makvana, a software engineer in Surat, India. I build distributed systems, backend APIs and machine-learning tools — from a Git clone written in C++ to a crawler that handles 50K URLs a second.">
+<meta name="author" content="Nil Makvana">
+<meta name="theme-color" content="#F9F6F3">
+<link rel="canonical" href="https://nilmakvana.github.io/">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nil Makvana — Software Engineer">
+<meta property="og:description" content="Distributed systems, backend APIs and machine-learning tools.">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/78582368?v=4">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23FDD46B'/><text y='71' x='50' text-anchor='middle' font-size='60' font-family='Georgia,serif' font-weight='600' fill='%231B1624'>N</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..700,0..100,0..1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<!-- ==========================================================================
+     SVG sprite — icons used across the page
+     ========================================================================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 12h13M12.5 6l6 6-6 6"/>
+  </symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 19V5M6 11l6-6 6 6"/>
+  </symbol>
+  <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>
+  </symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/>
+  </symbol>
+  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m8 6-6 6 6 6M16 6l6 6-6 6"/>
+  </symbol>
+  <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.55v-2.1c-3.2.7-3.88-1.37-3.88-1.37-.53-1.35-1.29-1.71-1.29-1.71-1.06-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.76.4-1.27.74-1.56-2.56-.29-5.25-1.28-5.25-5.71 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.44-2.69 5.42-5.26 5.7.41.36.78 1.06.78 2.14v3.17c0 .3.2.66.8.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/>
+  </symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-.95 1.83-1.95 3.76-1.95C21.6 8.75 23 11 23 14.4V21h-4v-5.9c0-1.4-.03-3.2-2-3.2s-2.3 1.53-2.3 3.1V21h-4V9Z"/>
+  </symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 6.5 8.5 6 8.5-6"/>
+  </symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 2.5H7a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7.5l-5-5Z"/><path d="M14 2.5v5h5M9 13h6M9 17h4"/>
+  </symbol>
+  <symbol id="i-network" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="4.5" r="2.5"/><circle cx="4.5" cy="19" r="2.5"/><circle cx="19.5" cy="19" r="2.5"/>
+    <path d="M12 7v4m0 0-6 5.4M12 11l6 5.4"/>
+  </symbol>
+  <symbol id="i-server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="3.5" width="18" height="7" rx="2"/><rect x="3" y="13.5" width="18" height="7" rx="2"/>
+    <path d="M7 7h.01M7 17h.01"/>
+  </symbol>
+  <symbol id="i-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 4.2a3 3 0 0 0-5.7 1.3A3 3 0 0 0 4 8.6a3 3 0 0 0 1 2.2A3 3 0 0 0 4.4 14a3 3 0 0 0 2.4 2.9A3 3 0 0 0 12 19.5Z"/>
+    <path d="M12 4.2a3 3 0 0 1 5.7 1.3A3 3 0 0 1 20 8.6a3 3 0 0 1-1 2.2 3 3 0 0 1 .6 3.2 3 3 0 0 1-2.4 2.9A3 3 0 0 1 12 19.5Z"/>
+  </symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2 8.5 12 4l10 4.5-10 4.5L2 8.5Z"/><path d="M6 10.7V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.3"/><path d="M21 9.2v4.6"/>
+  </symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 4h10v5a5 5 0 0 1-10 0V4Z"/><path d="M7 6H4.6A2.4 2.4 0 0 0 7 10.4M17 6h2.4A2.4 2.4 0 0 1 17 10.4"/><path d="M12 14v3M9.5 20h5M10.5 17h3"/>
+  </symbol>
+  <symbol id="i-medal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="15" r="5.2"/><path d="M8.7 10.4 6 3h5l1.8 3.7M15.3 10.4 18 3h-5"/>
+  </symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9.2" cy="8" r="3.2"/><path d="M3.2 20c0-3.3 2.7-5.6 6-5.6s6 2.3 6 5.6"/><path d="M16.6 5.4a3.2 3.2 0 0 1 0 5.9M18.1 14.9c1.9.8 3.1 2.6 3.1 5.1"/>
+  </symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 20.2s-7.6-4.8-7.6-9.5A4.1 4.1 0 0 1 12 7.7a4.1 4.1 0 0 1 7.6 3C19.6 15.4 12 20.2 12 20.2Z"/>
+  </symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.6V21M9.2 21h5.6"/>
+  </symbol>
+  <symbol id="i-notes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 17.6V5.4l11-2v12"/><circle cx="6.5" cy="18.2" r="2.6"/><circle cx="17.5" cy="16.2" r="2.6"/>
+  </symbol>
+  <symbol id="i-mask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4.6h16v6.9a8 8 0 0 1-16 0V4.6Z"/><path d="M8.6 9.6h.01M15.4 9.6h.01"/><path d="M9 14.2c1.8 1.4 4.2 1.4 6 0"/>
+  </symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 8.6a2 2 0 0 1 2-2h2l1.3-2h7.4l1.3 2h2a2 2 0 0 1 2 2v8.8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8.6Z"/><circle cx="12" cy="13" r="3.5"/>
+  </symbol>
+  <symbol id="i-racket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="15" cy="8.6" r="5.8"/><path d="M10.9 12.7 4.6 19M3 20.9l2.3-2.3"/>
+  </symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 6.6C10.4 5.3 8.2 4.6 5 4.6H3.2v13.8H5c3.2 0 5.4.7 7 2 1.6-1.3 3.8-2 7-2h1.8V4.6H19c-3.2 0-5.4.7-7 2Z"/><path d="M12 6.6v13.8"/>
+  </symbol>
+  <symbol id="i-chip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="6.5" y="6.5" width="11" height="11" rx="2.2"/>
+    <path d="M10 3v3.5M14 3v3.5M10 17.5V21M14 17.5V21M3 10h3.5M3 14h3.5M17.5 10H21M17.5 14H21"/>
+  </symbol>
+</svg>
+
+
+<div class="page">
+
+  <!-- ======================================================================
+       BAND 1 — masthead, hero, featured project, tech strip  (cream)
+       ====================================================================== -->
+  <div class="band band--cream band--top">
+    <div class="inner">
+
+      <!-- ---------- Masthead ---------- -->
+      <header class="masthead">
+        <a class="logo" href="#top" aria-label="Nil Makvana — home">
+          <span class="logo__word">Nil Makvana<span class="logo__dot">.</span></span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu">
+          <span></span>
+        </button>
+
+        <nav class="masthead__nav" id="site-nav" aria-label="Primary">
+          <div class="masthead__links">
+            <a href="#work">What I Build</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#about">About</a>
+            <a href="#elsewhere">Elsewhere</a>
+          </div>
+          <a class="btn btn--coral" href="#contact">Let’s work together</a>
+        </nav>
+      </header>
+
+      <!-- ---------- Hero ---------- -->
+      <section class="hero" id="top">
+        <div class="hero__figure reveal">
+          <!-- soft yellow blob -->
+          <svg class="hero__blob" viewBox="0 0 420 420" aria-hidden="true">
+            <path fill="currentColor" d="M212 14c58-6 104 26 133 74 29 47 41 110 18 160-23 51-81 88-140 95-59 7-119-16-153-59C36 241 28 176 50 124 72 71 124 25 176 16c12-2 24-1 36-2Z"/>
+          </svg>
+          <!-- dashed arc accent -->
+          <svg class="hero__arc" viewBox="0 0 120 240" fill="none" aria-hidden="true">
+            <path d="M104 8C46 40 12 96 12 138s30 74 88 94" stroke="currentColor" stroke-width="5"
+                  stroke-linecap="round" stroke-dasharray="1 26"/>
+          </svg>
+          <div class="hero__photo">
+            <!-- Swap this for a different photo, e.g. assets/img/nil.jpg -->
+            <img src="assets/img/nil4.png"
+                 alt="Portrait of Nil Makvana" width="440" height="440" fetchpriority="high">
+          </div>
+        </div>
+
+        <div class="hero__copy">
+          <h1 class="display hero__title reveal">
+            <span class="underlined">Hey&nbsp;there
+              <svg class="squiggle" viewBox="0 0 320 26" fill="none" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M4 14C60 6 140 3 214 6c30 1 62 4 102 9" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+                <path d="M16 23c58-6 138-8 208-5 26 1 52 3 82 6" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" opacity=".7"/>
+              </svg>
+            </span>
+            <span class="hero__wave" role="img" aria-label="waving hand">👋</span>
+          </h1>
+
+          <p class="lead hero__lead reveal">
+            I’m Nil. I’m a software engineer who builds
+            <strong>distributed systems</strong>, backend APIs and machine-learning tools —
+            from a <a class="mark-link" href="#p-mygit">Git clone written in C++</a> to a crawler
+            that chews through 50,000 URLs a second.
+          </p>
+
+          <ul class="hero__meta reveal">
+            <li><svg><use href="#i-pin"/></svg> Surat, India</li>
+            <li><svg><use href="#i-code"/></svg> Python · C++ · FastAPI</li>
+            <li><svg><use href="#i-github"/></svg> 24 public repositories</li>
+          </ul>
+
+          <div class="btn-row hero__cta reveal">
+            <a class="btn btn--lg" href="#projects">See what I’ve built</a>
+            <a class="btn btn--lg btn--ghost" href="https://github.com/nilmakvana" target="_blank" rel="noopener">
+              GitHub <svg class="ico"><use href="#i-external"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- Featured project ---------- -->
+      <section class="feature reveal" aria-labelledby="feature-title">
+        <div class="feature__grid">
+          <div>
+            <span class="feature__badge">Featured build</span>
+            <h2 class="feature__kicker" id="feature-title">
+              A crawler is only interesting once one machine isn’t enough.
+            </h2>
+            <p class="body-muted">
+              <strong>Distributed Web Crawler</strong> is a decentralised, fault-tolerant crawler built on
+              Python, Redis and MongoDB. Workers coordinate through Redis instead of a master node, so there’s
+              no single point of failure — add machines and throughput just goes up.
+            </p>
+
+            <div class="feature__stats">
+              <div class="stat-chip"><b>500+</b><span>workers tested</span></div>
+              <div class="stat-chip"><b>50K/s</b><span>URLs crawled</span></div>
+              <div class="stat-chip"><b>14 MB</b><span>to track 10M URLs</span></div>
+              <div class="stat-chip"><b>90%</b><span>storage saved</span></div>
+            </div>
+
+            <a class="btn" href="https://github.com/nilmakvana/Distributed-Web-Crawler" target="_blank" rel="noopener">
+              Explore the project <svg class="ico"><use href="#i-external"/></svg>
+            </a>
+          </div>
+
+          <div class="feature__art">
+            <svg viewBox="0 0 640 420" role="img" aria-label="Diagram: crawler workers coordinating through Redis into MongoDB">
+              <defs>
+                <linearGradient id="fg1" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#FBFAF8"/>
+                </linearGradient>
+              </defs>
+              <rect width="640" height="420" fill="none"/>
+              <!-- window -->
+              <rect x="34" y="30" width="572" height="360" rx="18" fill="url(#fg1)" stroke="#ECE5E1"/>
+              <rect x="34" y="30" width="572" height="44" rx="18" fill="#F9F6F3"/>
+              <rect x="34" y="60" width="572" height="14" fill="#F9F6F3"/>
+              <circle cx="60" cy="52" r="5.5" fill="#FD976D"/>
+              <circle cx="79" cy="52" r="5.5" fill="#FDD46B"/>
+              <circle cx="98" cy="52" r="5.5" fill="#5DCDF1"/>
+              <rect x="120" y="45" width="150" height="14" rx="7" fill="#ECE5E1"/>
+
+              <!-- workers -->
+              <g font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="600" fill="#1B1624">
+                <rect x="66" y="100" width="122" height="52" rx="13" fill="#FFF" stroke="#ECE5E1"/>
+                <text x="127" y="122" text-anchor="middle">Worker 1</text>
+                <text x="127" y="139" text-anchor="middle" font-size="11" font-weight="500" fill="#8D8A91">fetch · parse</text>
+
+                <rect x="259" y="100" width="122" height="52" rx="13" fill="#FFF" stroke="#ECE5E1"/>
+                <text x="320" y="122" text-anchor="middle">Worker 2</text>
+                <text x="320" y="139" text-anchor="middle" font-size="11" font-weight="500" fill="#8D8A91">fetch · parse</text>
+
+                <rect x="452" y="100" width="122" height="52" rx="13" fill="#FFF" stroke="#ECE5E1"/>
+                <text x="513" y="122" text-anchor="middle">Worker N</text>
+                <text x="513" y="139" text-anchor="middle" font-size="11" font-weight="500" fill="#8D8A91">fetch · parse</text>
+              </g>
+
+              <!-- connectors -->
+              <g stroke="#CFC7C1" stroke-width="2" stroke-linecap="round" fill="none">
+                <path d="M127 152v28h386v-28"/>
+                <path d="M320 152v28"/>
+                <path d="M320 180v34"/>
+              </g>
+              <circle cx="320" cy="180" r="4" fill="#5DCDF1"/>
+
+              <!-- redis -->
+              <rect x="196" y="214" width="248" height="66" rx="16" fill="#5DCDF1"/>
+              <g font-family="Plus Jakarta Sans, sans-serif" fill="#1B1624">
+                <text x="320" y="243" text-anchor="middle" font-size="15" font-weight="700">Redis — coordination</text>
+                <text x="320" y="263" text-anchor="middle" font-size="12" font-weight="500">frontier queue · bloom filter · locks</text>
+              </g>
+
+              <path d="M320 280v26" stroke="#CFC7C1" stroke-width="2" stroke-linecap="round"/>
+
+              <!-- mongo -->
+              <rect x="196" y="306" width="248" height="58" rx="16" fill="#FDD46B"/>
+              <g font-family="Plus Jakarta Sans, sans-serif" fill="#1B1624">
+                <text x="320" y="332" text-anchor="middle" font-size="15" font-weight="700">MongoDB — storage</text>
+                <text x="320" y="351" text-anchor="middle" font-size="12" font-weight="500">zlib-compressed documents</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- Tech strip ---------- -->
+      <section class="strip" aria-label="Technologies I work with">
+        <p class="strip__label">Things I reach for most days</p>
+        <div class="marquee">
+          <div class="marquee__track" data-marquee>
+            <span class="tech-pill"><i></i>Python</span>
+            <span class="tech-pill"><i></i>C++</span>
+            <span class="tech-pill"><i></i>FastAPI</span>
+            <span class="tech-pill"><i></i>Django</span>
+            <span class="tech-pill"><i></i>Redis</span>
+            <span class="tech-pill"><i></i>MongoDB</span>
+            <span class="tech-pill"><i></i>PostgreSQL</span>
+            <span class="tech-pill"><i></i>gRPC</span>
+            <span class="tech-pill"><i></i>Docker</span>
+            <span class="tech-pill"><i></i>Flutter</span>
+            <span class="tech-pill"><i></i>.NET</span>
+            <span class="tech-pill"><i></i>PyTorch</span>
+            <span class="tech-pill"><i></i>Linux</span>
+            <span class="tech-pill"><i></i>Git</span>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /.inner -->
+  </div><!-- /band 1 -->
+
+
+  <!-- ======================================================================
+       BAND 2 — What do I build?  (white)
+       ====================================================================== -->
+  <div class="band band--white">
+    <div class="inner section-pad" id="work">
+      <div class="section-head reveal">
+        <h2 class="display">What Do<br>I Build?</h2>
+      </div>
+
+      <div class="pillars">
+        <article class="pillar reveal">
+          <div class="pillar__icon"><svg><use href="#i-network"/></svg></div>
+          <h3 class="h-lg">Distributed Systems</h3>
+          <p>Trackers, peer-to-peer transfer, chunked parallel downloads and worker coordination — systems
+             designed so that losing one machine is a shrug, not an outage.</p>
+          <a class="link-arrow" href="#projects">See the systems <span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+        </article>
+
+        <article class="pillar reveal">
+          <div class="pillar__icon"><svg><use href="#i-server"/></svg></div>
+          <h3 class="h-lg">Backend Engineering</h3>
+          <p>Production APIs in FastAPI, Django and .NET — authentication that holds up, data models that
+             stay readable, and endpoints that behave the same on the tenth deploy as the first.</p>
+          <a class="link-arrow" href="#projects">See the APIs <span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+        </article>
+
+        <article class="pillar reveal">
+          <div class="pillar__icon"><svg><use href="#i-brain"/></svg></div>
+          <h3 class="h-lg">Machine Learning</h3>
+          <p>Applied ML with a research streak — testing whether neural nets can learn reduced-round ciphers,
+             modelling collective-communication cost for LLM training, and shipping the boring useful stuff too.</p>
+          <a class="link-arrow" href="#projects">See the research <span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+        </article>
+
+        <article class="pillar reveal">
+          <div class="pillar__icon"><svg><use href="#i-chip"/></svg></div>
+          <h3 class="h-lg">Systems Programming</h3>
+          <p>C++ close to the metal: real SHA-1 and zlib in a Git clone, a cellular network simulator with
+             custom exceptions and threads, and file I/O written against raw system calls.</p>
+          <a class="link-arrow" href="#projects">See the C++ work <span class="dot"><svg><use href="#i-arrow"/></svg></span></a>
+        </article>
+
+        <article class="pillar pillar--more reveal">
+          <div>
+            <h3 class="h-lg">… and plenty more</h3>
+            <div class="pillar__tags" style="margin-top:14px">
+              <span class="tag">Flutter apps</span>
+              <span class="tag">Data pipelines</span>
+              <span class="tag">Streamlit dashboards</span>
+              <span class="tag">REST &amp; gRPC</span>
+              <span class="tag">Computer vision</span>
+            </div>
+          </div>
+          <a class="btn btn--yellow" href="https://github.com/nilmakvana?tab=repositories" target="_blank" rel="noopener">
+            Explore all repositories <svg class="ico"><use href="#i-external"/></svg>
+          </a>
+        </article>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ======================================================================
+       BAND 3 — Highlight: MyGit  (white)
+       ====================================================================== -->
+  <div class="band band--white">
+    <div class="inner section-pad-sm">
+      <div class="highlight reveal">
+        <div>
+          <h2 class="h-lg">I rebuilt Git from scratch 🧩</h2>
+          <p style="margin-top:16px">
+            Most of us type <code>git commit</code> every day without knowing what happens next.
+            <strong>MyGit</strong> is my answer to that — a version control system written from zero in C++
+            that reimplements Git’s real object model: blobs, trees and commits, hashed with actual SHA-1
+            and compressed with actual zlib.
+          </p>
+          <p>
+            No framework, no shortcuts, no dependencies beyond the standard library. Just a small,
+            inspectable codebase where the magic stops being magic.
+          </p>
+          <div class="btn-row">
+            <a class="btn" href="https://github.com/nilmakvana/Mini-Version-Control-System" target="_blank" rel="noopener">
+              Take a look <svg class="ico"><use href="#i-external"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="highlight__art">
+          <svg viewBox="0 0 620 400" role="img" aria-label="Terminal session showing MyGit commands">
+            <rect width="620" height="400" fill="#1B1624"/>
+            <rect x="0" y="0" width="620" height="42" fill="#262032"/>
+            <circle cx="26" cy="21" r="6" fill="#FD976D"/>
+            <circle cx="47" cy="21" r="6" fill="#FDD46B"/>
+            <circle cx="68" cy="21" r="6" fill="#5DCDF1"/>
+            <text x="310" y="26" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif"
+                  font-size="12.5" font-weight="600" fill="#8D8A91">mygit — bash</text>
+
+            <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14.5">
+              <text x="28" y="84"  fill="#5DCDF1">$</text><text x="46" y="84"  fill="#F9F6F3">./mygit init</text>
+              <text x="28" y="108" fill="#76737C">Initialized empty MyGit repository in .mygit/</text>
+
+              <text x="28" y="148" fill="#5DCDF1">$</text><text x="46" y="148" fill="#F9F6F3">./mygit add main.cpp</text>
+              <text x="28" y="172" fill="#76737C">blob  a94a8fe5ccb19ba6 …  staged</text>
+
+              <text x="28" y="212" fill="#5DCDF1">$</text><text x="46" y="212" fill="#F9F6F3">./mygit commit -m "first light"</text>
+              <text x="28" y="236" fill="#FDD46B">[main 3f7c2ab] first light</text>
+              <text x="28" y="258" fill="#76737C"> 1 file changed  ·  tree 5b1e9d0c</text>
+
+              <text x="28" y="298" fill="#5DCDF1">$</text><text x="46" y="298" fill="#F9F6F3">./mygit log</text>
+              <text x="28" y="322" fill="#FD976D">commit 3f7c2ab</text>
+              <text x="28" y="344" fill="#76737C">Date: today  ·  first light</text>
+              <text x="28" y="372" fill="#5DCDF1">$</text>
+              <rect x="46" y="360" width="10" height="17" fill="#F9F6F3"><animate attributeName="opacity" values="1;1;0;0" dur="1.1s" repeatCount="indefinite"/></rect>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ======================================================================
+       BAND 4 — About  (cream)
+       ====================================================================== -->
+  <div class="band band--white band--nest">
+    <div class="inner" style="padding-inline:0">
+      <div class="band band--cream band--round">
+        <div class="inner section-pad" id="about">
+          <div class="about">
+            <div class="about__body reveal">
+              <h2 class="display">Hey, I’m<br>Nil Makvana</h2>
+
+              <p>
+                Since 2021 I’ve been writing code in the open. What started as a plain HTML portfolio has
+                turned into two dozen public repositories that trace a pretty clear arc — from CRUD apps and
+                college labs, to systems that coordinate hundreds of workers across a network.
+              </p>
+              <p>
+                Along the way I’ve built production backends with the team at <strong>RejoiceHub LLP</strong>
+                in Surat, shipped Flutter apps and .NET web apps, and spent a lot of late nights on my M.Tech at
+                IIIT Delhi — distributed systems, applied cryptography and object-oriented design.
+              </p>
+              <p>
+                The thread running through all of it is the same: I like the moment a complicated system
+                becomes simple. When the tangle of moving parts finally collapses into one clean idea — that’s
+                the part I keep coming back for.
+              </p>
+              <p>
+                If you’re building something in that space, or you just want to argue about consistency
+                models, I’d genuinely love to hear from you.
+              </p>
+
+              <div class="signature reveal">
+                <img class="signature__img" src="assets/img/signature.png"
+                     alt="Nil Makvana’s signature" width="1000" height="545" loading="lazy">
+                <svg class="signature__flourish" viewBox="0 0 300 26" fill="none" aria-hidden="true" focusable="false">
+                  <path d="M4 11C56 3 150 2 214 6c26 1.6 51 4.4 82 9" stroke="currentColor"
+                        stroke-width="4" stroke-linecap="round"/>
+                  <path d="M20 22C70 15 154 13 220 16c20 .9 40 2.4 62 4.6" stroke="currentColor"
+                        stroke-width="2.8" stroke-linecap="round" opacity=".55"/>
+                </svg>
+              </div>
+
+              <ul class="about__facts">
+                <li><span class="k">From</span><span class="v">Surat, Gujarat, India</span></li>
+                <li><span class="k">Currently</span><span class="v">M.Tech in CSE · IIIT Delhi</span></li>
+                <li><span class="k">Previously</span><span class="v">Backend engineering · RejoiceHub LLP</span></li>
+                <li><span class="k">Focus</span><span class="v">Distributed systems, backend, applied ML</span></li>
+                <li><span class="k">Languages</span><span class="v">Python, C++, C#, Dart, JavaScript, SQL</span></li>
+              </ul>
+
+              <div class="btn-row">
+                <a class="btn" href="#projects">See my projects</a>
+                <a class="btn" href="https://github.com/nilmakvana" target="_blank" rel="noopener">View my GitHub</a>
+                <a class="btn" href="https://www.linkedin.com/in/nilmakvana/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+                <a class="btn" href="#contact">Get in touch</a>
+              </div>
+            </div>
+
+            <div class="about__figure reveal">
+              <div class="about__photo">
+                <!-- Swap this for a local photo, e.g. assets/img/nil.jpg -->
+                <img src="assets/img/nil4.png"
+                     alt="Nil Makvana" width="440" height="528" loading="lazy">
+              </div>
+              <div class="about__sticker">
+                <b>2021 →</b>
+                <span>building in public</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ======================================================================
+       BAND 5 — Education &amp; awards  (cream)
+       ====================================================================== -->
+  <div class="band band--white band--nest">
+    <div class="inner" style="padding-inline:0">
+      <div class="band band--cream band--round">
+        <div class="inner section-pad" id="education">
+          <div class="section-head reveal">
+            <h2 class="display">Where I’ve<br>Studied</h2>
+          </div>
+
+          <div class="credentials">
+            <div class="reveal">
+              <h3 class="col-title">Education</h3>
+              <ol class="timeline">
+                <li class="timeline__item is-current">
+                  <span class="timeline__marker"></span>
+                  <div class="timeline__head">
+                    <h4 class="timeline__place">Indraprastha Institute of Information Technology, Delhi</h4>
+                    <span class="score">CGPA 8.82</span>
+                  </div>
+                  <p class="timeline__degree">M.Tech in Computer Science &amp; Engineering</p>
+                  <p class="timeline__meta">2025 — Present · till 2nd semester</p>
+                </li>
+
+                <li class="timeline__item">
+                  <span class="timeline__marker"></span>
+                  <div class="timeline__head">
+                    <h4 class="timeline__place">Dharmsinh Desai University</h4>
+                    <span class="score">CGPA 8.59</span>
+                  </div>
+                  <p class="timeline__degree">B.Tech in Computer Engineering</p>
+                  <p class="timeline__meta">2020 — 2024</p>
+                </li>
+
+                <li class="timeline__item">
+                  <span class="timeline__marker"></span>
+                  <div class="timeline__head">
+                    <h4 class="timeline__place">Ashadeep Vidhyalaya</h4>
+                    <span class="score">85.84%</span>
+                  </div>
+                  <p class="timeline__degree">Gujarat Board, Standard 12 (PCM)</p>
+                  <p class="timeline__meta">2019 — 2020</p>
+                </li>
+
+                <li class="timeline__item">
+                  <span class="timeline__marker"></span>
+                  <div class="timeline__head">
+                    <h4 class="timeline__place">Ashadeep Vidhyalaya</h4>
+                    <span class="score">94%</span>
+                  </div>
+                  <p class="timeline__degree">Gujarat Board, Standard 10</p>
+                  <p class="timeline__meta">2017 — 2018</p>
+                </li>
+              </ol>
+            </div>
+
+            <div class="reveal">
+              <h3 class="col-title">Awards &amp; Achievements</h3>
+              <ul class="awards">
+                <li class="award">
+                  <div class="award__icon"><svg><use href="#i-trophy"/></svg></div>
+                  <span class="award__stat">Dean’s Award</span>
+                  <h4 class="award__title">Excellent TA Award · IIIT Delhi, Winter 2026</h4>
+                  <p>Recognised by the Dean of Academic Affairs for outstanding contribution and
+                     impact as a Teaching Assistant.</p>
+                </li>
+
+                <li class="award">
+                  <div class="award__icon"><svg><use href="#i-medal"/></svg></div>
+                  <span class="award__stat">AIR 2928</span>
+                  <h4 class="award__title">GATE 2025 · Computer Science &amp; IT</h4>
+                  <p>Top 1.70% among more than 170,000 participants.</p>
+                </li>
+
+                <li class="award">
+                  <div class="award__icon"><svg><use href="#i-medal"/></svg></div>
+                  <span class="award__stat">AIR 1992</span>
+                  <h4 class="award__title">GATE 2025 · Data Science &amp; AI</h4>
+                  <p>Top 3.50% out of more than 57,000 candidates.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ======================================================================
+       BAND 6 — Projects  (white)
+       ====================================================================== -->
+  <div class="band band--white">
+    <div class="inner section-pad" id="projects">
+      <div class="section-head reveal">
+        <h2 class="display">A Few Things<br>I’ve Built</h2>
+      </div>
+
+      <div class="projects__grid" data-projects>
+
+        <a class="p-card reveal" href="https://github.com/nilmakvana/Distributed-Web-Crawler" target="_blank" rel="noopener">
+          <div class="p-card__thumb t-blue">
+            <span class="p-card__lang">Python</span>
+            <span class="p-card__glyph">50K&nbsp;URLs<small>per second</small></span>
+          </div>
+          <p class="p-card__date">June 2026</p>
+          <h3 class="p-card__title">Distributed Web Crawler</h3>
+          <p class="p-card__desc">Decentralised and fault-tolerant, coordinated through Redis with Bloom-filter dedupe.</p>
+          <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
+        </a>
+
+        <a class="p-card reveal" id="p-mygit" href="https://github.com/nilmakvana/Mini-Version-Control-System" target="_blank" rel="noopener">
+          <div class="p-card__thumb t-yellow">
+            <span class="p-card__lang">C++</span>
+            <span class="p-card__glyph">MyGit</span>
+          </div>
+          <p class="p-card__date">June 2026</p>
+          <h3 class="p-card__title">Mini Version Control System</h3>
+          <p class="p-card__desc">Git’s object model rebuilt from scratch — SHA-1, zlib, blobs, trees, commits.</p>
+          <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
+        </a>
+
+        <a class="p-card reveal" href="https://github.com/nilmakvana/Distributed-Peer-to-Peer-P2P-File-Sharing-System" target="_blank" rel="noopener">
+          <div class="p-card__thumb t-coral">
+            <span class="p-card__lang">C++</span>
+            <span class="p-card__glyph">P2P</span>
+          </div>
+          <p class="p-card__date">June 2026</p>
+          <h3 class="p-card__title">Distributed P2P File Sharing</h3>
+          <p class="p-card__desc">BitTorrent-inspired: tracker, groups, parallel chunk downloads, SHA-1 checks.</p>
+          <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
+        </a>
+
+        <a class="p-card reveal" href="https://github.com/nilmakvana/G_13_Collective_Communication_Algo_on_LLM_Training" target="_blank" rel="noopener">
+          <div class="p-card__thumb t-soft">
+            <span class="p-card__lang">Python</span>
+            <span class="p-card__glyph">All&#8209;Reduce</span>
+          </div>
+          <p class="p-card__date">April 2026</p>
+          <h3 class="p-card__title">Collective Communication Simulator</h3>
+          <p class="p-card__desc">Benchmarks All-Reduce algorithms for distributed LLM training across topologies.</p>
+          <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
+        </a>
+
+        <a class="p-card reveal" href="https://github.com/nilmakvana/LRR_Behaviour_Using_ML" target="_blank" rel="noopener">
+          <div class="p-card__thumb t-mint">
+            <span class="p-card__lang">Python</span>
+            <span class="p-card__glyph">Ciphers<small>vs. neural nets</small></span>
+          </div>
+          <p class="p-card__date">March 2026</p>
+          <h3 class="p-card__title">Cipher Behaviour Learned by ML</h3>
+          <p class="p-card__desc">Can neural nets learn reduced-round ciphers? Six ciphers, four models, five rounds.</p>
+          <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
+        </a>
+
+        <a class="p-card reveal" href="https://github.com/nilmakvana/OOPD_Project" target="_blank" rel="noopener">
+          <div class="p-card__thumb t-blue">
+            <span class="p-card__lang">C++</span>
+            <span class="p-card__glyph">2G → 5G</span>
+          </div>
+          <p class="p-card__date">November 2025</p>
+          <h3 class="p-card__title">Cellular Network Simulator</h3>
+          <p class="p-card__desc">Inheritance, templates, multithreading and custom exceptions, no STL shortcuts.</p>
+          <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
+        </a>
+
+        <a class="p-card reveal" href="https://github.com/nilmakvana/NEW_BATCH_FASTAPI_USER_AUTH" target="_blank" rel="noopener">
+          <div class="p-card__thumb t-yellow">
+            <span class="p-card__lang">FastAPI</span>
+            <span class="p-card__glyph">Auth</span>
+          </div>
+          <p class="p-card__date">October 2024</p>
+          <h3 class="p-card__title">FastAPI User Authentication</h3>
+          <p class="p-card__desc">Token auth, hashed credentials and a project layout that scales past the demo.</p>
+          <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
+        </a>
+
+        <a class="p-card reveal" href="https://github.com/nilmakvana/Blog_Fusion_API_Django" target="_blank" rel="noopener">
+          <div class="p-card__thumb t-coral">
+            <span class="p-card__lang">Django</span>
+            <span class="p-card__glyph">Blog API</span>
+          </div>
+          <p class="p-card__date">August 2024</p>
+          <h3 class="p-card__title">Blog Fusion API</h3>
+          <p class="p-card__desc">A REST API for a blogging platform, built with Django REST Framework.</p>
+          <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
+        </a>
+
+        <!-- revealed by "Show all" -->
+        <a class="p-card reveal is-hidden" data-extra href="https://github.com/nilmakvana/Social_Media_FastAPI" target="_blank" rel="noopener">
+          <div class="p-card__thumb t-soft">
+            <span class="p-card__lang">FastAPI</span>
+            <span class="p-card__glyph">Social</span>
+          </div>
+          <p class="p-card__date">April 2024</p>
+          <h3 class="p-card__title">Social Media API</h3>
+          <p class="p-card__desc">Posts, votes and users — a complete FastAPI backend with SQLAlchemy.</p>
+          <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
+        </a>
+
+        <a class="p-card reveal is-hidden" data-extra href="https://github.com/nilmakvana/WhatsApp-Chat-Analysis_Streamlit" target="_blank" rel="noopener">
+          <div class="p-card__thumb t-mint">
+            <span class="p-card__lang">Streamlit</span>
+            <span class="p-card__glyph">Chat Stats</span>
+          </div>
+          <p class="p-card__date">April 2024</p>
+          <h3 class="p-card__title">WhatsApp Chat Analysis</h3>
+          <p class="p-card__desc">Drop in a chat export and get timelines, word clouds and activity heatmaps.</p>
+          <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
+        </a>
+
+        <a class="p-card reveal is-hidden" data-extra href="https://github.com/nilmakvana/MachineLearning_Labs" target="_blank" rel="noopener">
+          <div class="p-card__thumb t-blue">
+            <span class="p-card__lang">Jupyter</span>
+            <span class="p-card__glyph">ML Labs</span>
+          </div>
+          <p class="p-card__date">March 2024</p>
+          <h3 class="p-card__title">Machine Learning Notebooks</h3>
+          <p class="p-card__desc">Working notebooks across regression, classification and clustering.</p>
+          <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
+        </a>
+
+        <a class="p-card reveal is-hidden" data-extra href="https://github.com/nilmakvana/WallCraft_Flutter" target="_blank" rel="noopener">
+          <div class="p-card__thumb t-yellow">
+            <span class="p-card__lang">Flutter</span>
+            <span class="p-card__glyph">WallCraft</span>
+          </div>
+          <p class="p-card__date">May 2023</p>
+          <h3 class="p-card__title">WallCraft — Wallpaper App</h3>
+          <p class="p-card__desc">Flutter app with Firebase authentication and cloud-hosted wallpapers.</p>
+          <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
+        </a>
+
+        <a class="p-card reveal is-hidden" data-extra href="https://github.com/nilmakvana/Online-Banking-System_Django" target="_blank" rel="noopener">
+          <div class="p-card__thumb t-coral">
+            <span class="p-card__lang">Django</span>
+            <span class="p-card__glyph">Banking</span>
+          </div>
+          <p class="p-card__date">May 2023</p>
+          <h3 class="p-card__title">Online Banking System</h3>
+          <p class="p-card__desc">Accounts, transfers and statements in a full Django web application.</p>
+          <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
+        </a>
+
+        <a class="p-card reveal is-hidden" data-extra href="https://github.com/nilmakvana/Restaurant-Review-Management-System_PHP" target="_blank" rel="noopener">
+          <div class="p-card__thumb t-soft">
+            <span class="p-card__lang">PHP</span>
+            <span class="p-card__glyph">Reviews</span>
+          </div>
+          <p class="p-card__date">May 2023</p>
+          <h3 class="p-card__title">Restaurant Review Manager</h3>
+          <p class="p-card__desc">Listings, ratings and moderation — a full-stack PHP course project.</p>
+          <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
+        </a>
+
+        <a class="p-card reveal is-hidden" data-extra href="https://github.com/nilmakvana/Library-Management-System_DotNetFramework" target="_blank" rel="noopener">
+          <div class="p-card__thumb t-mint">
+            <span class="p-card__lang">C#</span>
+            <span class="p-card__glyph">Library</span>
+          </div>
+          <p class="p-card__date">May 2023</p>
+          <h3 class="p-card__title">Library Management System</h3>
+          <p class="p-card__desc">A .NET Framework application for issuing, returning and tracking books.</p>
+          <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
+        </a>
+
+        <a class="p-card reveal is-hidden" data-extra href="https://github.com/nilmakvana/Expense-Tracker-App_DotNetCore" target="_blank" rel="noopener">
+          <div class="p-card__thumb t-blue">
+            <span class="p-card__lang">.NET Core</span>
+            <span class="p-card__glyph">Expenses</span>
+          </div>
+          <p class="p-card__date">November 2022</p>
+          <h3 class="p-card__title">Expense Tracker</h3>
+          <p class="p-card__desc">ASP.NET Core MVC app for logging spend with categories and monthly summaries.</p>
+          <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
+        </a>
+
+      </div>
+
+      <div class="projects__more">
+        <button class="btn btn--ink btn--lg" type="button" data-show-all
+                aria-expanded="false" aria-controls="projects">
+          Show all 16 projects
+        </button>
+        <a class="btn btn--lg btn--ghost" href="https://github.com/nilmakvana?tab=repositories" target="_blank" rel="noopener">
+          Browse on GitHub <svg class="ico"><use href="#i-external"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ======================================================================
+       BAND 7 — Beyond the code  (white)
+       ====================================================================== -->
+  <div class="band band--white">
+    <div class="inner section-pad" id="beyond">
+      <div class="section-head reveal">
+        <h2 class="display">Beyond<br>the Code</h2>
+      </div>
+
+      <ul class="roles">
+        <li class="role reveal">
+          <div class="role__icon"><svg><use href="#i-cap"/></svg></div>
+          <div>
+            <h3 class="role__title">Teaching Assistant · DSA</h3>
+            <p>Supported 80+ students through tutorials, labs and one-to-one programming mentorship.</p>
+          </div>
+        </li>
+
+        <li class="role reveal">
+          <div class="role__icon"><svg><use href="#i-trophy"/></svg></div>
+          <div>
+            <h3 class="role__title">Deputy Head · Sports Council</h3>
+            <p>Led planning and execution of campus sports events, coordinating logistics and
+               participation for 15+ inter-college competitions.</p>
+          </div>
+        </li>
+
+        <li class="role reveal">
+          <div class="role__icon"><svg><use href="#i-users"/></svg></div>
+          <div>
+            <h3 class="role__title">Mentor · Technical Expert</h3>
+            <p>Guided 50+ students through FastAPI, Django and Git/GitHub-based development projects.</p>
+          </div>
+        </li>
+
+        <li class="role reveal">
+          <div class="role__icon"><svg><use href="#i-heart"/></svg></div>
+          <div>
+            <h3 class="role__title">Volunteer · BAPS Swaminarayan Sanstha</h3>
+            <p>Led volunteer teams and organised community welfare programmes.</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="interests reveal">
+        <h3 class="col-title">When I’m not writing code</h3>
+        <ul class="interests__list">
+          <li class="interest"><svg><use href="#i-cap"/></svg>Teaching</li>
+          <li class="interest"><svg><use href="#i-mic"/></svg>Singing</li>
+          <li class="interest"><svg><use href="#i-notes"/></svg>Playing instruments</li>
+          <li class="interest"><svg><use href="#i-mask"/></svg>Acting</li>
+          <li class="interest"><svg><use href="#i-camera"/></svg>Photography</li>
+          <li class="interest"><svg><use href="#i-racket"/></svg>Badminton</li>
+          <li class="interest"><svg><use href="#i-book"/></svg>Reading books</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ======================================================================
+       BAND 8 — Elsewhere  (white)
+       ====================================================================== -->
+  <div class="band band--white">
+    <div class="inner section-pad-sm" id="elsewhere">
+      <div class="section-head section-head--center reveal">
+        <h2 class="display">Where Else<br>To Find Me</h2>
+      </div>
+
+      <div class="elsewhere">
+        <a class="e-card reveal" href="https://github.com/nilmakvana" target="_blank" rel="noopener">
+          <div class="e-card__icon"><svg><use href="#i-github"/></svg></div>
+          <h3 class="h-sm">GitHub</h3>
+          <p>Two dozen public repositories — the crawler, MyGit, the P2P system and everything before them.</p>
+          <span class="link-arrow">Open <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
+        </a>
+
+        <a class="e-card reveal" href="https://www.linkedin.com/in/nilmakvana/" target="_blank" rel="noopener">
+          <div class="e-card__icon"><svg><use href="#i-linkedin"/></svg></div>
+          <h3 class="h-sm">LinkedIn</h3>
+          <p>The career version of the same story — roles, education and the occasional long post.</p>
+          <span class="link-arrow">Connect <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
+        </a>
+
+        <a class="e-card reveal" href="mailto:your.email@example.com" data-email>
+          <div class="e-card__icon"><svg><use href="#i-mail"/></svg></div>
+          <h3 class="h-sm">Email</h3>
+          <p>The fastest way to reach me. I read everything and reply to anything that isn’t a newsletter.</p>
+          <span class="link-arrow">Say hello <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
+        </a>
+
+        <a class="e-card reveal" href="assets/Nil-Makvana-Resume.pdf">
+          <div class="e-card__icon"><svg><use href="#i-doc"/></svg></div>
+          <h3 class="h-sm">Résumé</h3>
+          <p>One page, no buzzwords — the projects, the stack and the roles, in printable form.</p>
+          <span class="link-arrow">Download <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ======================================================================
+       Contact + footer
+       ====================================================================== -->
+  <div class="band band--white">
+    <div class="inner site-footer" id="contact">
+
+      <section class="contact reveal" aria-labelledby="contact-title">
+        <div class="contact__aside">
+          <h2 class="display" id="contact-title">Let’s build<br>something</h2>
+          <p>
+            Got a role, a system that needs untangling, or an idea you want a second pair of hands on?
+            Tell me about it — I answer every message myself.
+          </p>
+          <div class="contact__badges">
+            <span class="badge"><span class="dotgreen"></span> Open to opportunities</span>
+            <span class="badge">Usually replies within a day</span>
+          </div>
+        </div>
+
+        <form class="form" data-contact-form novalidate>
+          <div class="field">
+            <label for="cf-name">Your name</label>
+            <input id="cf-name" name="name" type="text" autocomplete="name" placeholder="Jane Doe" required>
+          </div>
+          <div class="field">
+            <label for="cf-email">Your email</label>
+            <input id="cf-email" name="email" type="email" autocomplete="email" placeholder="jane@company.com" required>
+          </div>
+          <div class="field">
+            <label for="cf-msg">Message</label>
+            <textarea id="cf-msg" name="message" placeholder="What are you working on?" required></textarea>
+          </div>
+          <button class="btn btn--coral btn--lg" type="submit">
+            Send message <svg class="ico"><use href="#i-arrow"/></svg>
+          </button>
+          <p class="form__note" data-form-note>
+            This opens your own mail app with the message ready to send — nothing is stored on this site.
+          </p>
+        </form>
+      </section>
+
+      <div class="footer__bar">
+        <a class="logo logo--sm" href="#top" aria-label="Nil Makvana — home">
+          <span class="logo__word">Nil Makvana<span class="logo__dot">.</span></span>
+        </a>
+
+        <nav class="footer__nav" aria-label="Footer">
+          <a href="#work">What I Build</a>
+          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="socials">
+          <a href="https://github.com/nilmakvana" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg></a>
+          <a href="https://www.linkedin.com/in/nilmakvana/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
+          <a href="mailto:your.email@example.com" data-email aria-label="Email"><svg><use href="#i-mail"/></svg></a>
+        </div>
+      </div>
+
+      <p class="footer__copy" style="margin-top:20px">
+        © <span data-year>2026</span> Nil Makvana. Built from scratch — no page builders were harmed.
+      </p>
+    </div>
+  </div>
+
+</div><!-- /.page -->
+
+<button class="to-top" type="button" data-to-top aria-label="Back to top">
+  <svg><use href="#i-arrow-up"/></svg>
+</button>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
