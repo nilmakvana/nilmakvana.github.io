@@ -60,6 +60,9 @@ body{
 }
 
 img,svg{ max-width:100%; display:block; }
+
+/* nothing should ever be able to push the page sideways on a narrow screen */
+h1,h2,h3,h4,p,li,a,span,dd,dt{ overflow-wrap:break-word; }
 a{ color:inherit; text-decoration:none; }
 button{ font:inherit; color:inherit; }
 ul,ol{ margin:0; padding:0; list-style:none; }
@@ -1117,13 +1120,15 @@ p:last-child{ margin-bottom:0; }
 
 @media (max-width:900px){
   .hero{ grid-template-columns:1fr; text-align:left; }
-  .hero__figure{ order:-1; width:min(78%,320px); margin-inline:0; }
+  /* stacked layout: the portrait is centred, the copy stays left-aligned
+     (centred body text is harder to read at these widths) */
+  .hero__figure{ order:-1; width:min(78%,320px); margin-inline:auto; }
   .hero__lead{ max-width:none; }
   .feature__grid,
   .highlight,
   .about,
   .contact{ grid-template-columns:1fr; }
-  .about__figure{ order:-1; max-width:340px; }
+  .about__figure{ order:-1; width:100%; max-width:340px; margin-inline:auto; }
   .highlight__art{ order:-1; }
   .pillars{ grid-template-columns:minmax(0,1fr); }
   .credentials{ grid-template-columns:minmax(0,1fr); }   /* 0-min matches the desktop rule so cards can't out-grow narrow screens */
@@ -1166,9 +1171,40 @@ p:last-child{ margin-bottom:0; }
   .to-top{ right:14px; bottom:14px; }
 }
 
+/* ---- phones: reclaim room from chrome, keep everything on one column ---- */
+@media (max-width:600px){
+  .hero__meta{ gap:8px 16px; font-size:14px; }
+  .feature__stats{ gap:8px; }
+  .stat-chip{ flex:1 1 calc(50% - 4px); min-width:0; }
+  .btn--lg{ padding:13px 24px 12px; font-size:16.5px; }
+  .section-head{ margin-bottom:30px; }
+  .signature__img{ width:min(100%,260px); }
+  .signature__flourish{ width:min(100%,232px); }
+}
+
 @media (max-width:430px){
   .projects__grid{ grid-template-columns:1fr; }
   .p-card__desc{ display:block; }
+}
+
+/* ---- 320-400px: smallest phones still in circulation ---- */
+@media (max-width:400px){
+  :root{ --gutter:10px; }
+  .inner{ padding-inline:16px; }
+  .display{ font-size:clamp(32px,8.8vw,40px); }
+  .h-lg{ font-size:clamp(26px,7.4vw,32px); }
+  .hero__figure{ width:min(86%,264px); }
+  .btn{ font-size:15.5px; padding:11px 18px 10px; }
+  .btn--lg{ font-size:16px; padding:12px 20px 11px; }
+  .btn-row{ gap:10px; }
+  .interest{ padding:9px 14px; font-size:14.5px; }
+  .interest svg{ width:16px; height:16px; }
+  .timeline{ padding-left:26px; }
+  .timeline__marker{ left:-26px; }
+  .role{ flex-direction:column; gap:14px; }
+  .award{ padding:20px; }
+  .contact{ padding:26px 20px; }
+  .field input,.field textarea{ font-size:16px; }   /* 16px stops iOS zooming on focus */
 }
 
 @media (prefers-reduced-motion:reduce){
