@@ -19,10 +19,15 @@
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23FDD46B'/><text y='71' x='50' text-anchor='middle' font-size='60' font-family='Georgia,serif' font-weight='600' fill='%231B1624'>N</text></svg>">
 
+<!-- Set before the stylesheet so scroll-reveal only hides content when JS can
+     actually reveal it again. Without this the whole page renders at opacity 0
+     if the script fails to load. -->
+<script>document.documentElement.classList.add('js');</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..700,0..100,0..1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/styles.css?v=2">
 </head>
 <body>
 
@@ -155,14 +160,14 @@
           <div class="hero__photo">
             <!-- Swap this for a different photo, e.g. assets/img/nil.jpg -->
             <img src="assets/img/nil4.png"
-                 alt="Portrait of Nil Makvana" width="440" height="440" fetchpriority="high">
+                 alt="Portrait of Nil Makvana" width="1232" height="1277" fetchpriority="high">
           </div>
         </div>
 
           <!-- same autograph + blue flourish as the About sign-off -->
           <div class="hero__sign">
             <img class="hero__sign-img" src="assets/img/signature.png"
-                 alt="Nil Makvana’s signature" width="1000" height="473" loading="lazy">
+                 alt="" aria-hidden="true" width="1000" height="473" loading="lazy">
             <svg class="hero__sign-flourish" viewBox="0 0 300 26" fill="none" aria-hidden="true" focusable="false">
               <path d="M4 11C56 3 150 2 214 6c26 1.6 51 4.4 82 9" stroke="currentColor"
                     stroke-width="4" stroke-linecap="round"/>
@@ -501,7 +506,7 @@
               <div class="about__photo">
                 <!-- Swap this for a local photo, e.g. assets/img/nil.jpg -->
                 <img src="assets/img/nil4.png"
-                     alt="Nil Makvana" width="440" height="528" loading="lazy">
+                     alt="Nil Makvana" width="1232" height="1277" loading="lazy">
               </div>
               <div class="about__sticker">
                 <b>2021 →</b>
@@ -705,7 +710,7 @@
         </a>
 
         <!-- revealed by "Show all" -->
-        <a class="p-card reveal is-hidden" data-extra href="https://github.com/nilmakvana/Social_Media_FastAPI" target="_blank" rel="noopener">
+        <a class="p-card reveal" data-extra href="https://github.com/nilmakvana/Social_Media_FastAPI" target="_blank" rel="noopener">
           <div class="p-card__thumb t-soft">
             <span class="p-card__lang">FastAPI</span>
             <span class="p-card__glyph">Social</span>
@@ -716,7 +721,7 @@
           <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
         </a>
 
-        <a class="p-card reveal is-hidden" data-extra href="https://github.com/nilmakvana/WhatsApp-Chat-Analysis_Streamlit" target="_blank" rel="noopener">
+        <a class="p-card reveal" data-extra href="https://github.com/nilmakvana/WhatsApp-Chat-Analysis_Streamlit" target="_blank" rel="noopener">
           <div class="p-card__thumb t-mint">
             <span class="p-card__lang">Streamlit</span>
             <span class="p-card__glyph">Chat Stats</span>
@@ -727,7 +732,7 @@
           <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
         </a>
 
-        <a class="p-card reveal is-hidden" data-extra href="https://github.com/nilmakvana/MachineLearning_Labs" target="_blank" rel="noopener">
+        <a class="p-card reveal" data-extra href="https://github.com/nilmakvana/MachineLearning_Labs" target="_blank" rel="noopener">
           <div class="p-card__thumb t-blue">
             <span class="p-card__lang">Jupyter</span>
             <span class="p-card__glyph">ML Labs</span>
@@ -738,7 +743,7 @@
           <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
         </a>
 
-        <a class="p-card reveal is-hidden" data-extra href="https://github.com/nilmakvana/WallCraft_Flutter" target="_blank" rel="noopener">
+        <a class="p-card reveal" data-extra href="https://github.com/nilmakvana/WallCraft_Flutter" target="_blank" rel="noopener">
           <div class="p-card__thumb t-yellow">
             <span class="p-card__lang">Flutter</span>
             <span class="p-card__glyph">WallCraft</span>
@@ -749,7 +754,7 @@
           <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
         </a>
 
-        <a class="p-card reveal is-hidden" data-extra href="https://github.com/nilmakvana/Online-Banking-System_Django" target="_blank" rel="noopener">
+        <a class="p-card reveal" data-extra href="https://github.com/nilmakvana/Online-Banking-System_Django" target="_blank" rel="noopener">
           <div class="p-card__thumb t-coral">
             <span class="p-card__lang">Django</span>
             <span class="p-card__glyph">Banking</span>
@@ -760,7 +765,7 @@
           <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
         </a>
 
-        <a class="p-card reveal is-hidden" data-extra href="https://github.com/nilmakvana/Restaurant-Review-Management-System_PHP" target="_blank" rel="noopener">
+        <a class="p-card reveal" data-extra href="https://github.com/nilmakvana/Restaurant-Review-Management-System_PHP" target="_blank" rel="noopener">
           <div class="p-card__thumb t-soft">
             <span class="p-card__lang">PHP</span>
             <span class="p-card__glyph">Reviews</span>
@@ -771,7 +776,7 @@
           <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
         </a>
 
-        <a class="p-card reveal is-hidden" data-extra href="https://github.com/nilmakvana/Library-Management-System_DotNetFramework" target="_blank" rel="noopener">
+        <a class="p-card reveal" data-extra href="https://github.com/nilmakvana/Library-Management-System_DotNetFramework" target="_blank" rel="noopener">
           <div class="p-card__thumb t-mint">
             <span class="p-card__lang">C#</span>
             <span class="p-card__glyph">Library</span>
@@ -782,7 +787,7 @@
           <span class="link-arrow">View <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
         </a>
 
-        <a class="p-card reveal is-hidden" data-extra href="https://github.com/nilmakvana/Expense-Tracker-App_DotNetCore" target="_blank" rel="noopener">
+        <a class="p-card reveal" data-extra href="https://github.com/nilmakvana/Expense-Tracker-App_DotNetCore" target="_blank" rel="noopener">
           <div class="p-card__thumb t-blue">
             <span class="p-card__lang">.NET Core</span>
             <span class="p-card__glyph">Expenses</span>
@@ -892,7 +897,7 @@
           <span class="link-arrow">Connect <span class="dot"><svg><use href="#i-arrow"/></svg></span></span>
         </a>
 
-        <a class="e-card reveal" href="mailto:your.email@example.com" data-email>
+        <a class="e-card reveal" href="mailto:makvananick168@gmail.com" data-email>
           <div class="e-card__icon"><svg><use href="#i-mail"/></svg></div>
           <h3 class="h-sm">Email</h3>
           <p>The fastest way to reach me. I read everything and reply to anything that isn’t a newsletter.</p>
@@ -966,7 +971,7 @@
         <div class="socials">
           <a href="https://github.com/nilmakvana" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg></a>
           <a href="https://www.linkedin.com/in/nilmakvana/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
-          <a href="mailto:your.email@example.com" data-email aria-label="Email"><svg><use href="#i-mail"/></svg></a>
+          <a href="mailto:makvananick168@gmail.com" data-email aria-label="Email"><svg><use href="#i-mail"/></svg></a>
         </div>
       </div>
 
@@ -982,6 +987,6 @@
   <svg><use href="#i-arrow-up"/></svg>
 </button>
 
-<script src="assets/js/main.js" defer></script>
+<script src="assets/js/main.js?v=2" defer></script>
 </body>
 </html>

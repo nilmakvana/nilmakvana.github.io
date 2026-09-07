@@ -27,9 +27,26 @@ Open `index.html` in a browser and it works.
 3. **Your résumé.** Save a PDF as `assets/Nil-Makvana-Resume.pdf`, or delete the
    Résumé card in the "Where Else To Find Me" section of `index.html`.
 
+Your email lives in **two** places — `assets/js/main.js` (used by the contact
+form) and the two `mailto:` links in `index.html` (the no-JS fallback). Change
+both together.
+
 Also worth a glance: the four rows under **About** (location, current role, focus,
 languages) and the sentence mentioning RejoiceHub LLP — those came from your GitHub
 profile, so correct them if anything has changed.
+
+## After you edit CSS or JS
+
+`index.html` links them with a version query:
+
+```html
+<link rel="stylesheet" href="assets/css/styles.css?v=2">
+<script src="assets/js/main.js?v=2" defer></script>
+```
+
+Bump both numbers when you change either file. Browsers (and GitHub Pages'
+CDN) cache static assets aggressively, so without the bump returning visitors
+keep running the old stylesheet and script after you deploy.
 
 ## Run it locally
 

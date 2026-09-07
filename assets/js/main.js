@@ -10,8 +10,8 @@
      1. CONFIG — the only bit you normally need to edit
      ------------------------------------------------------------------ */
   var SITE = {
-    // TODO: put your real address here. It is used by the Email card,
-    // the footer icon and the contact form.
+    // Used by the Email card, the footer icon and the contact form. The same
+    // address is hard-coded in index.html as the no-JS fallback — change both.
     email: 'makvananick168@gmail.com',
     name:  'Nil Makvana'
   };
@@ -98,6 +98,10 @@
   if (showAll) {
     var extras = $$('[data-extra]');
     var total  = $$('.p-card').length;
+
+    // The markup ships every card visible so the list is complete without JS.
+    // Collapse the extras here, now that the toggle is wired up.
+    extras.forEach(function (card) { card.classList.add('is-hidden'); });
     showAll.textContent = 'Show all ' + total + ' projects';
 
     showAll.addEventListener('click', function () {
@@ -166,7 +170,7 @@
         return;
       }
 
-      var subject = 'Hello from ' + name + ' — via nilmakvana.com';
+      var subject = 'Hello from ' + name + ' — via ' + location.hostname;
       var body    = message + '\n\n—\n' + name + '\n' + email;
 
       window.location.href =
