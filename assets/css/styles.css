@@ -43,7 +43,10 @@
 html{
   -webkit-text-size-adjust:100%;
   scroll-behavior:smooth;
-  scroll-padding-top:96px;
+  /* No sticky header, so no offset is needed. 96px here stopped every jump
+     96px short of its target, leaving the tail of the previous section on
+     screen. Each section's own top padding supplies the breathing room. */
+  scroll-padding-top:0;
 }
 
 body{
@@ -156,6 +159,14 @@ p:last-child{ margin-bottom:0; }
 }
 
 .section-pad{ padding-block:clamp(56px,8vw,102px); }
+
+/* Anchor landing. Plain sections scroll a little into their own top padding
+   (it is empty space anyway); the cream panels stop at their top edge so the
+   rounded corner is not cut off. */
+#work,#projects,#beyond{ scroll-margin-top:-44px; }
+/* cream panels stop at their top edge; #elsewhere/#contact use the smaller
+   section padding, so trimming 44px off it would crowd the heading */
+#about,#education,#contact,#elsewhere{ scroll-margin-top:10px; }
 .section-pad-sm{ padding-block:clamp(40px,5vw,64px); }
 
 .section-head{ margin-bottom:clamp(32px,4.5vw,56px); }
