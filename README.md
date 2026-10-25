@@ -82,7 +82,9 @@ it's a static site, so leave both blank.
 ## Design
 
 The layout, type scale, spacing rhythm and palette follow
-[aliabdaal.com](https://aliabdaal.com):
+[aliabdaal.com](https://aliabdaal.com). The full colour system, including usage
+rules, contrast ratios and copy-paste tokens for new projects, is in
+[COLORS.md](COLORS.md).
 
 | Token   | Value     | Used for                         |
 |---------|-----------|----------------------------------|

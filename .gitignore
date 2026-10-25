@@ -1,1 +1,117 @@
-.claude
+# ---------------------------------------------------------------------------
+# nilmakvana.github.io
+#
+# This repo IS the deployed site — GitHub Pages serves these files directly,
+# with no build step. So never ignore anything the page loads: no *.css,
+# *.js, *.png, *.jpg, *.svg, *.pdf or *.woff2 rules here. If a file is
+# ignored, it does not get pushed, and the live site 404s on it.
+# ---------------------------------------------------------------------------
+
+
+# --- macOS ------------------------------------------------------------------
+# .DS_Store is the big one: Finder writes it into every folder you open, and
+# it has no business in a repo.
+.DS_Store
+.DS_Store?
+._*
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.fseventsd
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+Icon[\r]
+
+# --- Windows ----------------------------------------------------------------
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# --- Linux ------------------------------------------------------------------
+*~
+.directory
+.Trash-*
+.nfs*
+
+
+# --- Editors and IDEs -------------------------------------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+.project
+.settings/
+*.swp
+*.swo
+*.bak
+*.orig
+*.tmp
+
+
+# --- Tooling ----------------------------------------------------------------
+# Not used today, but here so an npm/Sass/Tailwind step later doesn't commit
+# half a gigabyte of dependencies on its first run.
+node_modules/
+.npm
+.yarn/
+.pnp.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.sass-cache/
+*.css.map
+*.js.map
+
+# Python — the image-processing scripts for the signature run locally
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.Python
+
+# Build output, if a bundler is ever added. Harmless while there is no build.
+dist/
+build/
+.cache/
+.parcel-cache/
+.temp/
+
+
+# --- Secrets ----------------------------------------------------------------
+# Nothing here needs secrets today, but if a contact-form backend or an
+# analytics key gets added, this stops it reaching a public repo.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets.json
+
+
+# --- Deploy platforms -------------------------------------------------------
+.netlify/
+.vercel/
+.firebase/
+.github/*.local.yml
+
+
+# --- Local tool config ------------------------------------------------------
+# Claude Code's local dev-server config. Keeping your existing choice to
+# ignore it; drop this line if you'd rather share it across machines.
+.claude/
+
+
+# --- Project-specific -------------------------------------------------------
+# Scratch space for drafts and experiments that shouldn't ship.
+scratch/
+tmp/
+*.psd
+*.ai
+*.sketch
+*.fig
